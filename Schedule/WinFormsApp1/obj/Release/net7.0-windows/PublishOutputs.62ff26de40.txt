@@ -1,0 +1,5 @@
+C:\Users\Admin\Desktop\C#TP\app\Schedule.exe
+C:\Users\Admin\Desktop\C#TP\app\Schedule.dll
+C:\Users\Admin\Desktop\C#TP\app\Schedule.deps.json
+C:\Users\Admin\Desktop\C#TP\app\Schedule.runtimeconfig.json
+C:\Users\Admin\Desktop\C#TP\app\Schedule.pdb
