@@ -8,15 +8,15 @@ namespace WinFormsApp1
         public AddNS()
         {
             InitializeComponent();
-            
+
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            if(trackBar1.Value==1)
+            if (trackBar1.Value == 1)
             {
                 label1.Text = "Normal";
-                label1.ForeColor= Color.Green;
+                label1.ForeColor = Color.Green;
             }
             if (trackBar1.Value == 2)
             {
@@ -35,30 +35,42 @@ namespace WinFormsApp1
             if (firsttime)
             {
                 Note.Clear();
-                firsttime= false;
+                firsttime = false;
             }
             label2.Text = null;
         }
 
         private void Add_Click(object sender, EventArgs e)
         {
-            if(Note.Text=="" || Note.Text== "Type Here!")
+            if (Note.Text == "" || Note.Text == "Type Here!")
             {
                 MessageBox.Show("There is nothing to add!");
             }
             else
             {
-                StreamWriter sr= new StreamWriter(@"C:\Users\Admin\Documents\Note.txt", true);
-                sr.Write(label1.Text);
-                sr.Write(",");
-                sr.Write(dat.Text);
-                sr.Write(",");
-                sr.WriteLine(Note.Text);
-                sr.Close();
+                StreamWriter sr2 = new StreamWriter(@"C:\Users\Admin\Documents\Note.txt",true);
+                sr2.Write(label1.Text);
+                sr2.Write(",");
+                sr2.Write(AddingDate.Text);
+                sr2.Write(",");
+                sr2.WriteLine(Note.Text);
+                sr2.Close();
             }
             label2.Text = "Added!";
             Note.Clear();
-            
+
         }
+
+        private void Note_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNS_Load(object sender, EventArgs e)
+        {
+            AddingDate.Value = DateTime.Now;
+
+        }
+
     }
 }

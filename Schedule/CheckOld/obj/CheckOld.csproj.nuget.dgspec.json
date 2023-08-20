@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Downloads\\Csharp-main\\Schedule\\WinFormsApp1\\Schedule.csproj": {}
+    "C:\\Users\\Admin\\Downloads\\Csharp-main\\Schedule\\CheckOld\\CheckOld.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Downloads\\Csharp-main\\Schedule\\WinFormsApp1\\Schedule.csproj": {
+    "C:\\Users\\Admin\\Downloads\\Csharp-main\\Schedule\\CheckOld\\CheckOld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Downloads\\Csharp-main\\Schedule\\WinFormsApp1\\Schedule.csproj",
-        "projectName": "Schedule",
-        "projectPath": "C:\\Users\\Admin\\Downloads\\Csharp-main\\Schedule\\WinFormsApp1\\Schedule.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Downloads\\Csharp-main\\Schedule\\CheckOld\\CheckOld.csproj",
+        "projectName": "CheckOld",
+        "projectPath": "C:\\Users\\Admin\\Downloads\\Csharp-main\\Schedule\\CheckOld\\CheckOld.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Downloads\\Csharp-main\\Schedule\\WinFormsApp1\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Downloads\\Csharp-main\\Schedule\\CheckOld\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -29,107 +29,108 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNS));
-            this.dat = new System.Windows.Forms.DateTimePicker();
-            this.Add = new System.Windows.Forms.Button();
-            this.Note = new System.Windows.Forms.TextBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.SuspendLayout();
+            AddingDate = new DateTimePicker();
+            Add = new Button();
+            Note = new TextBox();
+            trackBar1 = new TrackBar();
+            label1 = new Label();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
+            SuspendLayout();
             // 
-            // dat
+            // AddingDate
             // 
-            this.dat.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
-            this.dat.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dat.Location = new System.Drawing.Point(359, 344);
-            this.dat.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
-            this.dat.Name = "dat";
-            this.dat.Size = new System.Drawing.Size(106, 27);
-            this.dat.TabIndex = 0;
-            this.dat.Value = new System.DateTime(2023, 2, 2, 21, 1, 55, 0);
+            AddingDate.CalendarMonthBackground = SystemColors.MenuHighlight;
+            AddingDate.Format = DateTimePickerFormat.Time;
+            AddingDate.Location = new Point(359, 344);
+            AddingDate.MinDate = new DateTime(2020, 1, 1, 0, 0, 0, 0);
+            AddingDate.Name = "AddingDate";
+            AddingDate.Size = new Size(106, 27);
+            AddingDate.TabIndex = 0;
+            AddingDate.Value = new DateTime(2023, 2, 2, 21, 1, 55, 0);
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(364, 392);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(94, 29);
-            this.Add.TabIndex = 1;
-            this.Add.Text = "Add";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
+            Add.Location = new Point(364, 392);
+            Add.Name = "Add";
+            Add.Size = new Size(94, 29);
+            Add.TabIndex = 1;
+            Add.Text = "Add";
+            Add.UseVisualStyleBackColor = true;
+            Add.Click += Add_Click;
             // 
             // Note
             // 
-            this.Note.Location = new System.Drawing.Point(287, 59);
-            this.Note.Multiline = true;
-            this.Note.Name = "Note";
-            this.Note.Size = new System.Drawing.Size(250, 198);
-            this.Note.TabIndex = 2;
-            this.Note.Text = "Type Here!";
-            this.Note.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Note.Click += new System.EventHandler(this.Note_Click);
+            Note.Location = new Point(287, 59);
+            Note.Multiline = true;
+            Note.Name = "Note";
+            Note.Size = new Size(250, 198);
+            Note.TabIndex = 2;
+            Note.Text = "Type Here!";
+            Note.TextAlign = HorizontalAlignment.Center;
+            Note.Click += Note_Click;
+            Note.TextChanged += Note_TextChanged;
             // 
             // trackBar1
             // 
-            this.trackBar1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.trackBar1.LargeChange = 1;
-            this.trackBar1.Location = new System.Drawing.Point(287, 279);
-            this.trackBar1.Maximum = 3;
-            this.trackBar1.Minimum = 1;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(250, 56);
-            this.trackBar1.TabIndex = 3;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar1.Value = 2;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            trackBar1.Anchor = AnchorStyles.None;
+            trackBar1.LargeChange = 1;
+            trackBar1.Location = new Point(287, 279);
+            trackBar1.Maximum = 3;
+            trackBar1.Minimum = 1;
+            trackBar1.Name = "trackBar1";
+            trackBar1.Size = new Size(250, 56);
+            trackBar1.TabIndex = 3;
+            trackBar1.TickStyle = TickStyle.None;
+            trackBar1.Value = 2;
+            trackBar1.Scroll += trackBar1_Scroll;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.IndianRed;
-            this.label1.Location = new System.Drawing.Point(352, 313);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Important";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Anchor = AnchorStyles.Top;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.IndianRed;
+            label1.Location = new Point(352, 313);
+            label1.Name = "label1";
+            label1.Size = new Size(120, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Important";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(384, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 23);
-            this.label2.TabIndex = 5;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Red;
+            label2.Location = new Point(384, 10);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 23);
+            label2.TabIndex = 5;
             // 
             // AddNS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.Note);
-            this.Controls.Add(this.Add);
-            this.Controls.Add(this.dat);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AddNS";
-            this.Text = "Schedule-Add";
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(trackBar1);
+            Controls.Add(Note);
+            Controls.Add(Add);
+            Controls.Add(AddingDate);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "AddNS";
+            Text = "Schedule-Add";
+            Load += AddNS_Load;
+            ((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private DateTimePicker dat;
+        private DateTimePicker AddingDate;
         private Button Add;
         private TextBox Note;
         private TrackBar trackBar1;

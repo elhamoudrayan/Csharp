@@ -15,10 +15,10 @@ using System.Reflection.Emit;
 
 namespace WinFormsApp1
 {
-    public partial class Check : Form
+    public partial class CheckNew : Form
     {
-        bool firsttime=true;
-        public Check()
+        bool firsttime = true;
+        public CheckNew()
         {
             InitializeComponent();
         }
@@ -56,13 +56,13 @@ namespace WinFormsApp1
 
 
 
-                        if ((Convert.ToDateTime(idn[1]) - DateAndTime.Now).Days>40)
+                        if ((Convert.ToDateTime(idn[1]) - DateAndTime.Now).Days > 40)
                             this.Notes.Rows[Notes.RowCount - 1].Cells[3].Style.ForeColor = Color.Green;
                         if ((Convert.ToDateTime(idn[1]) - DateAndTime.Now).Days < 10)
                         {
                             this.Notes.Rows[Notes.RowCount - 1].Cells[3].Style.ForeColor = Color.Red;
                         }
-                        if ((Convert.ToDateTime(idn[1]) - DateAndTime.Now).Days <40 && (Convert.ToDateTime(idn[1]) - DateAndTime.Now).Days > 10)
+                        if ((Convert.ToDateTime(idn[1]) - DateAndTime.Now).Days < 40 && (Convert.ToDateTime(idn[1]) - DateAndTime.Now).Days > 10)
                         {
                             this.Notes.Rows[Notes.RowCount - 1].Cells[3].Style.ForeColor = Color.BlueViolet;
                         }
@@ -77,55 +77,13 @@ namespace WinFormsApp1
                     this.Close();
                 }
             }
-            //int Top = 10;
-            //int Left = 15;
-            //for (int i=0; i<splited.Length;i++)
-            //{
-            //    Label lbl = new Label();
-            //    this.Controls.Add(lbl);
-            //    lbl.Top = Top;
-            //    lbl.Left = Left;
-            //    string[] importance = splited[i].Split(',');
-            //    if (importance[0] == "Urgent")
-            //    {
-            //        lbl.ForeColor = Color.Red;
-            //        lbl.BackColor = Color.White;
-            //        lbl.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold);
-            //        lbl.AutoSize = true;
-            //        lbl.Text = splited[i];
-            //    }
-            //    if (importance[0] == "Important")
-            //    {
-            //        lbl.ForeColor = Color.IndianRed;
-            //        lbl.BackColor = Color.White;
-            //        lbl.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold);
-            //        lbl.AutoSize = true;
-            //        lbl.Text = splited[i];
-            //    }
-            //    if (importance[0] == "Normal")
-            //    {
-            //        lbl.ForeColor = Color.Green;
-            //        lbl.BackColor = Color.White;
-            //        lbl.Font = new Font("Segoe UI", 12.5F, FontStyle.Bold);
-            //        lbl.AutoSize = true;
-            //        lbl.Text = splited[i];
-            //    }
-            //    sr.Close();
-            //    Top += 40;
 
-            //}
-
-        }
-
-        private void dragover(object sender, DragEventArgs e)
-        {
-            
         }
 
         private void hover(object sender, EventArgs e)
         {
             ClearALL.BackColor = Color.Red;
-            ClearALL.Font = new Font(ClearALL.Font, FontStyle.Bold); 
+            ClearALL.Font = new Font(ClearALL.Font, FontStyle.Bold);
         }
 
         private void leavehover(object sender, EventArgs e)
@@ -138,38 +96,31 @@ namespace WinFormsApp1
         {
             File.Delete(@"C:\Users\Admin\Documents\Note.txt");
             this.Close();
-            
-        }
 
-        private void clear1_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void clear1button_Click(object sender, EventArgs e)
         {
-            if (clear1.Text == "" || clear1.Text == "Fill here Importance,Date,Note separated by a comma")
-            {
-                label1.Text = "Nothing to delete";
-            }
-            else
-            {
-                StreamReader sr = new StreamReader(@"C:\Users\Admin\Documents\Note.txt");
-                StreamWriter sw = new StreamWriter(@"C:\Users\Admin\Documents\Note1.txt");
-                while (sr.Peek() != -1) {
-                    string line = sr.ReadLine();
-                    if (!(line==clear1.Text))
-                        sw.WriteLine(line);
-                }
-                sr.Close();
-                sw.Close();
-                File.Copy(@"C:\Users\Admin\Documents\Note1.txt", @"C:\Users\Admin\Documents\Note.txt", true);
-                File.Delete(@"C:\Users\Admin\Documents\Note1.txt");
-                //label1.Text= "Cleared!";
-                //File.Delete(@"C:\Users\Admin\Documents\Note1.txt");
-                
 
+            StreamReader Read_Note = new StreamReader(@"C:\Users\Admin\Documents\Note.txt");
+            StreamWriter Write_needed = new StreamWriter(@"C:\Users\Admin\Documents\Note1.txt");
+            int stoping_index = 0;
+            while (Read_Note.Peek() != -1)
+            {
+                if (stoping_index == int.Parse(Del_row.Text))
+                {
+                    Read_Note.ReadLine();
+                }
+                else
+                {
+                    Write_needed.WriteLine(Read_Note.ReadLine());
+                }
+                stoping_index++;
             }
+            Read_Note.Close();
+            Write_needed.Close();
+            File.Copy(@"C:\Users\Admin\Documents\Note1.txt", @"C:\Users\Admin\Documents\Note.txt", true);
+            File.Delete(@"C:\Users\Admin\Documents\Note1.txt");
         }
 
         private void clear1_Click(object sender, EventArgs e)
@@ -177,10 +128,14 @@ namespace WinFormsApp1
             label1.Text = null;
             if (firsttime)
             {
-                clear1.Clear();
+                Del_row.Clear();
                 firsttime = false;
             }
         }
 
+        private void clear1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
